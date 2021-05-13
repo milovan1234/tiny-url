@@ -1,19 +1,19 @@
-<h5 class="mb-2 mt-4">Top 10 the most visited URLs:</h5>
-<table class="table table-striped">
+<h5 class="my-4 text-primary">Top 10 the most visited URLs:</h5>
+<table class="table table-striped border-bottom">
     <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">Id</th>
           <th scope="col">Original URL</th>
           <th scope="col">Short URL</th>
           <th scope="col">Counter</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="">
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+        <tr *ngFor="let url of visitedUrls">
+          <th>{{url.id}}</th>
+          <td>{{url.originalUrl}}</td>
+          <td>{{url.shortUrl}}</td>
+          <td>{{url.count}}</td>
         </tr>
       </tbody>
 </table>

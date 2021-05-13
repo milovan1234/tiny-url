@@ -7,5 +7,6 @@ namespace TinyURL.Services
     {
         Url Create(Url url);
         Url GetUrl(string shortUrl);
+        ICollection<Url> GetVisitedUrls();
     }
 }

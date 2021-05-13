@@ -26,6 +26,12 @@ namespace TinyURL.Controllers
             return this._urlService.GetUrl(shortUrl);
         }
 
+        [HttpGet("visited-urls")]
+        public IEnumerable<Url> GetVisitedUrls()
+        {
+            return this._urlService.GetVisitedUrls();
+        }
+
         [HttpPost]
         public IActionResult CreateShortUrl([FromBody] Url url)
         {

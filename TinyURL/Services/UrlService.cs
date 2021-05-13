@@ -1,5 +1,6 @@
 ﻿
 using MongoDB.Driver;
+using System.Collections.Generic;
 using TinyURL.Models;
 
 namespace TinyURL.Services
@@ -31,6 +32,11 @@ namespace TinyURL.Services
             }
 
             return url;
+        }
+
+        public ICollection<Url> GetVisitedUrls()
+        {
+            return this._urls.Find(url => true).SortByDescending(url => url.Count).Limit(10).ToList();
         }
     }
 }
