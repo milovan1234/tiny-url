@@ -1,0 +1,26 @@
+<div *ngIf="!isCreated">
+    <h5>Enter a long URL to make a TinyURL</h5>
+    <input type="text" class="form-control w-50" [(ngModel)]="url.originalUrl">
+
+    <!-- <h5 class="my-3">Customize your link</h5>
+    <div class="input-group w-50">
+        <div class="input-group-prepend">
+            <div class="input-group-text">http://localhost:45434</div>
+        </div>
+        <input type="text" class="form-control" placeholder="Alias">
+    </div> -->
+
+    <button class="btn btn-primary my-3" (click)="createTinyUrl()">Make TinyURL!</button>
+
+    <!-- <h6 class="my-5" *ngIf="url.shortUrl">Short URL: <span class="text-primary">{{ url.shortUrl }}</span></h6> -->
+</div>
+
+<div *ngIf="isCreated">
+    <h5>Your Long URL</h5>
+    <input type="text" class="form-control w-50" [(ngModel)]="url.originalUrl">
+
+    <h5 class="my-3">TinyURL</h5>
+    <input type="text" class="form-control w-50" [(ngModel)]="url.shortUrl">
+
+    <button class="btn btn-secondary my-3" (click)="shortenAnother()">Shorten another</button>
+</div>
